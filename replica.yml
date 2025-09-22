@@ -12,7 +12,7 @@ spec:
   minReadySeconds: 6
   replicas: 4
   selector:
-    matchLables:
+    matchLabels:
       app: yellowapp-pods
   template: 
     metadata:
@@ -28,7 +28,7 @@ spec:
               containerPort: 80
               protocol: TCP
           startupProbe: 
-            httpget:
+            httpGet:
               path: "/hemanth"
               port: 80
           livenessProbe:
