@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata: 
   name: rp-pods
-  lables: 
+  labels: 
     app: myapp
     env: dev
   namespace: devnamespace
@@ -17,7 +17,7 @@ spec:
   template: 
     metadata:
       name: podlevellables
-      lables:
+      labels:
         app: yellowlable
     spec: 
       containers:
