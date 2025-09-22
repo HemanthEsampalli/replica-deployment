@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata: 
   name: rp-pods
   labels: 
-    app: myapp
+    app: yellowapp
     env: dev
   namespace: devnamespace
   annotations:
