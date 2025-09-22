@@ -9,10 +9,10 @@ metadata:
   annotations:
     myecrimage:
 spec:
-  miniReadySeconds: 6
+  minReadySeconds: 6
   replicas: 4
   selector:
-    matchlables:
+    matchLables:
       app: yellowapp-pods
   template: 
     metadata:
@@ -25,16 +25,16 @@ spec:
           image: 503427799577.dkr.ecr.us-east-2.amazonaws.com/dev/myownimage:latest
           ports:
             - name: yellowapp-ports
-              containerport: 80
+              containerPort: 80
               protocol: TCP
-          startupprobe: 
+          startupProbe: 
             httpget:
               path: "/hemanth"
               port: 80
-          livenessprobe:
+          livenessProbe:
             tcpSocket:
               port: 80
-          readinessprobe:
+          readinessProbe:
             exec:
               command:
                 - echo hi
