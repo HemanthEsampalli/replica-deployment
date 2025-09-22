@@ -18,7 +18,7 @@ spec:
     metadata:
       name: podlevellables
       labels:
-        app: yellowlable
+        app: yellowapp-pods
     spec: 
       containers:
         - name: yellowimage
