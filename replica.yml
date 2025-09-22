@@ -7,7 +7,7 @@ metadata:
     env: dev
   namespace: devnamespace
   annotations:
-    myecrimage:
+    myecrimage: 503427799577.dkr.ecr.us-east-2.amazonaws.com/dev/myownimage:latest
 spec:
   minReadySeconds: 6
   replicas: 4
