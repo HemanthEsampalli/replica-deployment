@@ -1,0 +1,52 @@
+apiversion: apps/v1
+kind: Replicaset
+metadata: 
+  name: rp-pods
+  lables: 
+    app: myapp
+    env: dev
+  namespace: devnamespace
+  annotations:
+    myecrimage:
+spec:
+  miniReadySeconds: 6
+  replicas: 4
+  selector:
+    matchlables:
+      app: yellowapp-pods
+  template: 
+    metadata:
+      name: podlevellables
+      lables:
+        app: yellowlable
+    spec: 
+      containers:
+        - name: yellowimage
+          image: 503427799577.dkr.ecr.us-east-2.amazonaws.com/dev/myownimage:latest
+          ports:
+            - name: yellowapp-ports
+              containerport: 80
+              protocol: TCP
+          startupprobe: 
+            httpget:
+              path: "/hemanth"
+              port: 80
+          livenessprobe:
+            tcpSocket:
+              port: 80
+          readinessprobe:
+            exec:
+              command:
+                - echo hi
+          resources:
+            requests:
+              cpu: 100M
+              memory: 150Mi
+            limits:
+              cpu: 200M
+              memory: 250Mi
+           
+
+
+
+    
